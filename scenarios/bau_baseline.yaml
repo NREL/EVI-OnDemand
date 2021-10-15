@@ -1,24 +1,24 @@
-scenario_name: baseline_scenario
-tnc_share: 0.015
-deadhead_perc: 0.0
-hc_scenario: 'scen_3_access'
 base_wh_mi: 300
-sim_days: 150
-dcfc_max_kw: 150
 charge_taper: 0
-l2_max_kw: 7.2
-soc_high: 0.8
-soc_low: 0.15
+dcfc_max_kw: 150
+deadhead_perc: 0.0
+hc_scenario: scen_3_access
 initial_soc: 1
+l2_max_kw: 7.2
+output_dir: /home/mmoniot/github/EVI-OnDemand/sim_outputs/updated_sensitivity/
+percentile_ambient_conditions: 85
 plug_in_mins: 5
-utilization_perc: 0.3
+scenario_name: bau_baseline
 shift_length_dist:
   2: 45
   4: 29
   6.5: 17
   10: 9
+sim_days: 150
+soc_high: 0.8
+soc_low: 0.15
+tnc_share: 0.015
+utilization_perc: 0.3
 veh_kwh_dict:
   75: 100
-output_dir:
-  '../outputs/'
 vmt_override_flag: 1

@@ -23,7 +23,9 @@ def retrieve_cbsa_inputs(global_inputs,
     cbsa_tnc_vmt = pop_cbsa_vmt * global_inputs['tnc_share'] * (1 + global_inputs['deadhead_perc'])
     cbsa_hc_access = int(
         100 * cbsa_hc_access[cbsa_hc_access.cbsa_id == cur_cbsa_id][global_inputs['hc_scenario']].values[0])
-    cur_cbsa_whmi = cbsa_whmi_adjustments[cbsa_whmi_adjustments.geoid==cur_cbsa_id].penalty_factor.values[0] * global_inputs['base_wh_mi']
+    
+    efficiency_label = str(global_inputs['percentile_ambient_conditions']) + '_perc_penalty'
+    cur_cbsa_whmi = cbsa_whmi_adjustments[cbsa_whmi_adjustments.geoid==cur_cbsa_id][efficiency_label].values[0] * global_inputs['base_wh_mi']
         
     cbsa_inputs = {
         'avg_speed_mph': avg_speed_mph,
@@ -274,7 +276,8 @@ def directory_handling(global_inputs, scenario):
     # Parent output folder, useful for novel sensitivities
     if not os.path.exists(global_inputs['output_dir']):
         os.makedirs(global_inputs['output_dir'])
-
+        
+       
     output_dir = global_inputs['output_dir'] +  scenario + '--' + dt_string
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -406,7 +409,8 @@ if __name__ == "__main__":
             ix = ix + 1
 
     hours_per_charger = 24 * global_inputs['utilization_perc']
-    tnc_population_results['plugs'] = tnc_population_results.cbsa_dcfc_hours / hours_per_charger
+#     tnc_population_results['plugs'] = tnc_population_results.cbsa_dcfc_plug_time / hours_per_charger # This includes plugging in and out in utilization
+    tnc_population_results['plugs'] = tnc_population_results.cbsa_dcfc_hours / hours_per_charger # This includes plugging in and out in utilization
 
     
     permutation_results.to_csv('%s/permutation_results.csv' % output_dir, index=False)
@@ -415,5 +419,4 @@ if __name__ == "__main__":
     print('\n\nSimulation finished!')
     print('Number of plugs: %s' % int(tnc_population_results.plugs.sum()))
     print('Number of vehicles: %s' % int(tnc_population_results.num_vehs.sum()))
-    print('Vehicles per plug: %s' % round(int(tnc_population_results.num_vehs.sum()) /
-          int(tnc_population_results.plugs.sum()), 2))
+    print('Plugs per 1000 vehs: %s' % round(int(tnc_population_results.plugs.sum())*1000 / tnc_population_results.num_vehs.sum(),2))

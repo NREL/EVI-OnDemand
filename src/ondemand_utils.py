@@ -1,3 +1,4 @@
+import yaml
 import pandas as pd
 
 
@@ -6,7 +7,7 @@ def calc_chg_time(veh_kwh,
                   dcfc_max_kw,
                   soc_low,
                   soc_high):
-    veh_power_curve = pd.read_csv('../data/normalized_power_curve.csv')
+    veh_power_curve = pd.read_csv('/home/mmoniot/github/EVI-OnDemand/data/normalized_power_curve.csv')
     veh_power_curve['chg_acceptance'] = veh_power_curve.rel_power * veh_max_kw
 
     cur_soc = soc_low
