@@ -21,7 +21,13 @@ pip install tqdm
 ````
 
 ### Simulation Execution
-To execute EVI-Ondemand, first navigate to the scenarios/ folder within the EVI-OnDemand repository. Next, call the model and clarify which scenario to run through the following command:
+To execute EVI-Ondemand, first navigate to the scenarios/ folder within the EVI-OnDemand repository:
+```
+cd scenarios
+```
+
+
+Next, call the model and clarify which scenario to run through the following command:
 
 ```
 python ../src/ondemand_fleetsim.py bau_baseline.yaml
@@ -32,12 +38,13 @@ This will execute the model and outputs will be written to the outputs/ folder. 
 ```
 Beginning simulation...
 
-CBSA 383: 100%|██████████████████████████████████████████████████████████████████████████████████| 384/384 [00:14<00:00, 27.26it/s]
+CBSA 383: 100%|██████████████████████████████████████████████████████████████████████| 384/384 [00:08<00:00, 47.39it/s]
+
 
 Simulation finished!
-Number of plugs: 30331
-Number of vehicles: 1462096
-Vehicles per plug: 48.2
+Number of plugs: 25466
+Number of vehicles: 1454009
+Plugs per 1000 vehs: 17.51
 ```
 
 Additional simulations can be performed by creating additional input .yaml files with varying input parameters. Any questions pertaining to the model should be directed to Matthew Moniot at matthew.moniot@nrel.gov
