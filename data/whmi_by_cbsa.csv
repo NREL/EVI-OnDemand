@@ -1,4 +1,4 @@
-no_penalty,75_perc_penalty,85_perc_penalty,95_perc_penalty,geoid,ua_name
+-1_perc_penalty,75_perc_penalty,85_perc_penalty,95_perc_penalty,geoid,ua_name
 1,1.773229167,1.82125,1.843541667,21820,"Fairbanks, AK"
 1,1.666770833,1.7515625,1.836041667,40340,"Rochester, MN"
 1,1.742395833,1.804583333,1.837708333,20260,"Duluth, MN-WI"
