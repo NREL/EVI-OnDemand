@@ -5,7 +5,7 @@ deadhead_perc: 0.0
 hc_scenario: scen_3_access
 initial_soc: 1
 l2_max_kw: 7.2
-output_dir: /home/mmoniot/github/EVI-OnDemand/sim_outputs/updated_sensitivity/
+output_dir: /home/mmoniot/github/EVI-OnDemand/sim_outputs/
 percentile_ambient_conditions: 85
 plug_in_mins: 5
 scenario_name: bau_baseline
