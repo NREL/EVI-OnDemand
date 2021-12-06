@@ -23,6 +23,7 @@ pip install tqdm
 ### Simulation Execution
 To execute EVI-Ondemand, first navigate to the scenarios/ folder within the EVI-OnDemand repository:
 ```
+cd EVI-OnDemand
 cd scenarios
 ```
 
