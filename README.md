@@ -48,4 +48,4 @@ Number of vehicles: 1454009
 Plugs per 1000 vehs: 17.51
 ```
 
-Additional simulations can be performed by creating additional input .yaml files with varying input parameters. Any questions pertaining to the model should be directed to Matthew Moniot at matthew.moniot@nrel.gov
+Additional simulations can be performed by creating additional input .yaml files with varying input parameters. Any questions pertaining to the model should be directed to Brennan Borlaug at brennan.borlaug@nrel.gov
